@@ -39,6 +39,8 @@ const client = new Client({
   puppeteer: {
     headless: false,
     args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--disable-accelerated-2d-canvas',
       '--no-first-run',
