@@ -34,24 +34,15 @@ app.get('/', (req, res) => {
   });
 });
 
-// const client = await puppeteer.launch({
-//   ignoreDefaultArgs: [
-//     '--disable-extensions'
-//   ],
-//   headless: false
-// });
-
 const client = new Client({
   restartOnAuthFail: true,
   puppeteer: {
-    headless: true,
+    headless: false,
     args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--disable-accelerated-2d-canvas',
       '--no-first-run',
-      '--no-zygote', // <- this one doesn't works in Windows
+      '--no-zygote',
       '--disable-gpu'
     ],
   },
